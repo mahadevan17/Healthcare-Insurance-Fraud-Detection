@@ -1,6 +1,6 @@
 # Healthcare-Insurance-Fraud-Detection
 
-Note: Unable to add Train_outpatient.csv as the file is more than 25mb.
+Note: Unable to add Train_Outpatientdata.csv as the file is more than 25mb.
 
 Project on Machine Learning
 
