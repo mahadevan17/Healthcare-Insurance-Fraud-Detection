@@ -30,8 +30,8 @@ The dataset underwent division into training and testing subsets, followed by th
 The resultant dataset was employed to train Random Forest Classifier and Decision Tree Classifier models, which were subsequently evaluated using performance metrics including F1-score and the area under the ROC curve (AUC).
 
 #Version Insurance_Fraud_Detection.ipynb
-the dataset was pre-proccessed using a different approach 
-Dataset consists of 8 files(4 train,4 test).
+
+the dataset was pre-proccessed using a different approach ,Dataset consists of 8 files(4 train,4 test).
 
 The Inpatient data(with 40,474 records, 30 features) and Outpatient data(with 5,17,737 records, 27 features) consisted of many missing values so, for both scenarios features with more than 70% missing values were dropped.
 
