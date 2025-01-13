@@ -1,4 +1,5 @@
-# Healthcare-Insurance-Fraud-Detection
+# Healthcare-Insurance-Fraud-Detection 
+#Version1 finalMini.ipynb
 
 Note: Unable to add Train_Outpatientdata.csv as the file is more than 25mb.
 
@@ -27,3 +28,21 @@ The datasets have been standardized utilizing the StandardScaler module.
 The dataset underwent division into training and testing subsets, followed by the application of oversampling and under sampling techniques.
 
 The resultant dataset was employed to train Random Forest Classifier and Decision Tree Classifier models, which were subsequently evaluated using performance metrics including F1-score and the area under the ROC curve (AUC).
+
+#Version Insurance_Fraud_Detection.ipynb
+the dataset was pre-proccessed using a different approach 
+Dataset consists of 8 files(4 train,4 test).
+
+The Inpatient data(with 40,474 records, 30 features) and Outpatient data(with 5,17,737 records, 27 features) consisted of many missing values so, for both scenarios features with more than 70% missing values were dropped.
+
+Rest of missing values were imputed with KNN(For missing numerical values) and Random imputation(For missing catergorical values) methodology.
+The Inpatient and Outpatient dataset set was combined then the the combined datset is merged with Beneficiary datset on the basis of "BeneficiaryId" and "Provider".
+then the datset is combined with the target values on the basis of Provider
+
+In the new dataset , Random Forest (as a feature selector) is applied to get the importance score for all the features.
+
+And final dataset is derived and is utilised with the above methodology to get the result.
+
+
+
+
