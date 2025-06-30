@@ -1,48 +1,37 @@
-# Healthcare-Insurance-Fraud-Detection 
-#Version1 finalMini.ipynb
+<h2>📊 Machine Learning Component</h2>
 
-Note: Unable to add Train_Outpatientdata.csv as the file is more than 25mb.
+<h3>🧠 Healthcare-Insurance-Fraud-Detection</h3>
+<p>
+This part of the project focuses on detecting fraudulent healthcare insurance claims using supervised Machine Learning techniques. The dataset used is from Kaggle:  
+<a href="https://www.kaggle.com/datasets/rohitrox/healthcare-provider-fraud-detection-analysis" target="_blank">Healthcare Provider Fraud Detection Dataset</a>.
+</p>
 
-Project on Machine Learning
+<p><b>Note:</b> <code>Train_Outpatientdata.csv</code> could not be uploaded due to GitHub’s 25MB file size limit.</p>
 
-link to the dataset: https://www.kaggle.com/datasets/rohitrox/healthcare-provider-fraud-detection-analysis
+<p>The dataset consists of 8 files (4 for training, 4 for testing), including Inpatient, Outpatient, Beneficiary, and Target files.</p>
 
-Dataset consists of 8 files(4 train,4 test).
+<ul>
+  <li><b>Missing Value Handling:</b> Features with more than 50% missing values were dropped. KNN imputation was used for numerical values and random imputation for categorical values.</li>
+  <li><b>Data Merging:</b> Beneficiary data was joined with both Inpatient and Outpatient datasets separately. Then, target labels were added accordingly.</li>
+  <li><b>Feature Selection:</b> Random Forest was used as a feature selector:
+    <ul>
+      <li>Threshold of 0.04 was set for Inpatient data (resulting in shape: <code>(40474, 6)</code>)</li>
+      <li>Threshold of 0.02 for Outpatient data (resulting in shape: <code>(517737, 12)</code>)</li>
+    </ul>
+  </li>
+  <li><b>Data Scaling:</b> StandardScaler was used for normalization.</li>
+  <li><b>Balancing:</b> Oversampling and undersampling techniques were applied to address class imbalance.</li>
+  <li><b>Modeling:</b> Random Forest and Decision Tree classifiers were trained and evaluated using F1-score and AUC (Area Under ROC Curve).</li>
+</ul>
 
-The Inpatient data(with 40,474 records, 30 features) and Outpatient data(with 5,17,737 records, 27 features) consisted of many missing values so, for both scenarios features with more than 50% missing values were dropped.
+<h3>🧪 Insurance_Fraud_Detection.ipynb</h3>
+<p>
+This version followed an alternate preprocessing approach using the same dataset.
+</p>
 
-Rest of missing values were imputed with KNN(For missing numerical values) and Random imputation(For missing catergorical values) methodology.
-
-The beneficiary data is combined with Inpatient data ,Out patient separately and then the target data is combined to have two datasets to work on.
-
-The Inpatient had shape of 40,474 records, 44 features and Outpatient had shape of 5,17,737 records, 32 features.
-
-In those new datasets , Random Forest (as a feature selector) is applied to get the importance score for all the features.
-
-For Inpatient dataset the threshold of 0.04 is and for out patient dataset threshold of 0.02 is set respectively.
-
-Now a two new datasets derived by this feature selection methodology. So for Inpatient data the shape is (40,747,6) and for Outpatient dataset the shape is (517737,12).
-
-The datasets have been standardized utilizing the StandardScaler module.
-
-The dataset underwent division into training and testing subsets, followed by the application of oversampling and under sampling techniques.
-
-The resultant dataset was employed to train Random Forest Classifier and Decision Tree Classifier models, which were subsequently evaluated using performance metrics including F1-score and the area under the ROC curve (AUC).
-
-#Version Insurance_Fraud_Detection.ipynb
-
-the dataset was pre-proccessed using a different approach ,Dataset consists of 8 files(4 train,4 test).
-
-The Inpatient data(with 40,474 records, 30 features) and Outpatient data(with 5,17,737 records, 27 features) consisted of many missing values so, for both scenarios features with more than 70% missing values were dropped.
-
-Rest of missing values were imputed with KNN(For missing numerical values) and Random imputation(For missing catergorical values) methodology.
-The Inpatient and Outpatient dataset set was combined then the the combined datset is merged with Beneficiary datset on the basis of "BeneficiaryId" and "Provider".
-then the datset is combined with the target values on the basis of Provider
-
-In the new dataset , Random Forest (as a feature selector) is applied to get the importance score for all the features.
-
-And final dataset is derived and is utilised with the above methodology to get the result.
-
-
-
-
+<ul>
+  <li><b>Missing Value Handling:</b> This time, features with more than 70% missing values were dropped.</li>
+  <li><b>Imputation:</b> KNN for numerical and random imputation for categorical values.</li>
+  <li><b>Data Merging:</b> Inpatient and Outpatient were combined, then merged with Beneficiary data using <code>BeneficiaryID</code> and <code>Provider</code>. The resulting dataset was then joined with target values based on <code>Provider</code>.</li>
+  <li><b>Feature Selection & Modeling:</b> Random Forest was used for feature importance ranking and the selected features were used for training ML models as in the previous version.</li>
+</ul>
